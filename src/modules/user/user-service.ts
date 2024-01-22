@@ -1,6 +1,7 @@
 import userSchema from "./user-schema";
 
 interface User {
+  name: string;
   email: string;
   password: string;
 }

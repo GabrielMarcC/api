@@ -1,6 +1,6 @@
 import express from "express";
 import { config } from "dotenv";
-import { router as UserRouter } from "./modules/user/user-routes";
+import { createuser as UserRouter } from "./modules/user/user-routes";
 import { authRoutes as AuthRouter } from "./modules/auth/auth-routes";
 import { createDBConnection } from "./database/connection";
 

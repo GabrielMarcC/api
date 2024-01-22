@@ -6,10 +6,10 @@ export class UserController {
   static async create(req: Request, res: Response) {
     const user = req.body;
     await UserService.save({
+      name: user.name,
       email: user.email,
       password: await hash(user.password, 10),
     });
-
     res.json({ message: "created" });
   }
 }
