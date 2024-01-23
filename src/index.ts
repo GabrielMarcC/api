@@ -3,6 +3,7 @@ import { config } from "dotenv";
 import { createuser as UserRouter } from "./modules/user/user-routes";
 import { authRoutes as AuthRouter } from "./modules/auth/auth-routes";
 import { createDBConnection } from "./database/connection";
+import cors from "cors";
 
 config();
 
@@ -11,8 +12,8 @@ createDBConnection()
   .then(() => console.log("sucess"))
   .catch((err) => console.log(err.message));
 
+app.use(cors());
 app.use(express.json());
-
 app.use(UserRouter);
 app.use(AuthRouter);
 
