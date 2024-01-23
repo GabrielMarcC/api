@@ -17,7 +17,7 @@ export class Auth {
     if (!match) return res.json({ message: "invalid credentials" });
 
     const token = await Auth.createJwt({ user_id: user.id });
-    res.json({ acess_Token: token });
+    res.status(200).json({ acess_Token: token });
   }
 
   static async compare(data: string, database: string) {
